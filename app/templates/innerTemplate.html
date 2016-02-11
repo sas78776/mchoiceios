@@ -1,0 +1,9 @@
+<div id="selofficetype">
+<label><%= label1 %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+<select id="officetype" required>
+	<option value=""><%= selectLabel %></option>
+	<% _.each(offTypeCollection.offTypeCollection, function(model) { %>
+            <option value = "<%= model.officeTypeId %>"><%= model.officeTypeName %></option>
+      <% }); %>
+</select>
+</div>

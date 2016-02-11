@@ -1,0 +1,16 @@
+<div role="main" class="ui-content">
+    <h2 style="text-align:center;font:22pt"><%= pageHeader %></h2>
+    <form id="loginform">
+        <label for="mobileNo"><%= firstLabel %></label>
+        <input name="mobileNo" id="mobileno" value="" placeholder="mobile number" type="number" required />
+        <label for="password"><%= secondLabel %></label>
+        <input data-clear-btn="true" name="password" id="password" value="" autocomplete="off" type="password" required/>
+        <fieldset datarole="control-group">
+            <input type="checkbox" name="chck-remember-me" id="check-remember-me" checked="">
+            <label for="check-remember-me"><%= thirdLabel %></label>
+    </form>
+    <a id="btn-submit" class="ui-btn ui-corner-all green-btn" style="margin-top:1.5em;"><%= submit %></a>
+    <a id="btn-forgot-pwd" class="ui-btn ui-btn-b ui-corner-all blue-btn" style="margin-top:1.5em;"><%= forgot %></a>
+    <p style="margin-top:1.5em;text-align:center"><%= fourthLabel %></p>
+    <a href="signup" id="btn-signup" class="ui-btn ui-btn-b ui-corner-all blue-btn"><%= signup %></a>
+</div>

@@ -1,0 +1,19 @@
+<% if (SPDV_FIELD_REQUIRED === "required"){ %>  
+    <label id="label_<%= SPDI_ATTRIBUTE_ID %>"><%=SPDV_ATTRIBUTE_LABEL%>&nbsp;<font color="#FFF" size="+1">*</font></label>       
+    <% } else { %>
+        <label id="label_<%= SPDI_ATTRIBUTE_ID %>"><%=SPDV_ATTRIBUTE_LABEL%></label> 
+        <% } %> 
+<input list = "listview+<%= SPDI_ATTRIBUTE_ID %>" name="<%= SPDV_ATTRIBUTE_LABEL%>~<%= SPDI_ATTRIBUTE_ID %>" id="<%= SPDI_ATTRIBUTE_ID %>" <%= SPDV_FIELD_REQUIRED %>>
+<datalist name="<%=SPDV_ATTRIBUTE_LABEL%>" id="listview+<%= SPDI_ATTRIBUTE_ID %>" <%= SPDV_FIELD_REQUIRED %>>
+<!--<option><%=selectlabel%></option>-->
+    <% if (SPDV_STATIC_LIST_VALUES) { %>
+        <% _.each(SPDV_STATIC_LIST_VALUES,function(item){ %>
+            <option value="<%=item.id %>"><%= item.id %></option>
+        <% }); %>
+    <% }else {%>
+        <% _.each(QUERY,function(item){ %>
+            <option value="<%=item.DATA_VALUE %>" data-itemId="<%=item.DATA_ID %>"></option>
+        <% }); %>
+    <% } %>
+</datalist>
+<div id="<%=DIV_ID%>" class="errormsg" style="display: block;"></div>

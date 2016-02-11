@@ -1,0 +1,27 @@
+<!--
+<%_.each(offTypeLabelCollection.offTypeLabelCollection,function(model){ %>
+	<label><%= model.labelName %></label>
+	<select>
+		<option>Select</option>
+		<% if(offTypeLabelCollection.value==model.labelId){ %>
+		<%_.each(offTypeLabelCollection.obj,function(model1,i){ %>
+			
+			<option value=<%=i%>><%=model1%></option>
+			<% });%>
+			<% } %>
+	</select>
+	
+<% });%>
+</div>
+-->
+<div id="deleteselect">
+<% console.log(offTypeLabelCollection.myid) %>
+<div id=<%= offTypeLabelCollection.myid %> >
+<label><%= offTypeLabelCollection.label %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+<select id="<%= offTypeLabelCollection.myid %>" required>
+	<option value=""><%= selectLabel %></option>
+	<% _.each(offTypeLabelCollection.obj, function(model,val) { %>
+            <option  value=<%= val %>><%= model %></option>
+      <% }); %>
+</select>
+</div>

@@ -1,0 +1,12 @@
+<div id= "<%= params.fieldid %>" style = "background-color:white;">
+	<h5 style="word-break:break-word;white-space:normal;color: #333; padding-left: 5px"><%= params.heading %></h5> 
+	<ul data-role="listview" data-inset="true" class="ui-content">
+	<% _.each(params.fieldsetcollection,function(model) { %>
+		<li><div style="word-break:break-word;white-space:normal;">
+    	<h5 style="word-break:break-word;white-space:normal;"><%= model.name %></h5>
+    	<div><%= model.value %></div>
+			</div></li>
+		<% });%>
+	</ul>
+</div>
+			

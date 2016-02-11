@@ -1,0 +1,32 @@
+<form id="userdataform">
+    <h3 style="padding:5px;"><%= pageTitle %></h3>
+    <div class="ui-content" id="formdiv">
+        <label for="ud-name"><%= label1 %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+        <input type="text" name="Init_By_UNm" id="ud-name" required>
+        <label for="ud-beneficary-name"><%= label2 %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+        <input type="text" name="BENI_NAME" id="ud-beneficary-name" required>
+        <label for="ud-checkbox"><%= label3 %></label>
+        <input type="checkbox" name="favcolor" id="ud-checkbox" value="red">
+        <label for="application-date"><%= label4 %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+        <input type="text" name="Appl_Dt" id="ud-application-date" readonly>
+        <label for="applicant-address"><%= label5 %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+        <textarea name="applicantAddress" name="ADDRS" id="ud-applicant-address" required></textarea>
+        <label for="mobile-number"><%= label6 %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+        <input type="number" name="Phone_No" id="ud-mobile-number" required>
+        <label for="email"><%= label7 %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+        <input type="email" name="Email_Id" id="ud-email" required>
+        <label for="aadhar"><%= label8 %></label>
+        <input type="text" name="Aadhar_No" id="ud-aadhar" >
+        <label for="placeOfEvent"><%= placeOfEvent %></label>
+        <label for="districts"><%= label9 %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+        <div id="selectfields">
+        <select id="districts" required>
+            <option value=""><%= selectLabel %></option>
+            <% _.each(distCollection, function(model) { %>
+            <option value=<%= model.distId %>><%= model.distName %></option>
+                <% }); %>
+        </select>
+        </div>
+       <a id="btn-submit-user-data" class="ui-btn green-btn ui-corner-all" style="margin : auto" type="hidden"><%= submit %></a> 
+    </div>
+</form>

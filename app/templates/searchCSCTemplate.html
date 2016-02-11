@@ -1,0 +1,19 @@
+<form id="search-csc-form" class="ui-content">
+    <label><%= district %></label>
+    <select id="csc-distId">
+        <option value="0"><%= selectLabel %></option>
+    </select>
+    <label><%= block %></label>
+    <select id="csc-blockId">
+        <option value="0"><%= selectLabel %></option>
+    </select>
+    <a id="btn-search-csc" class="ui-btn green-btn ui-corner-all" style="margin : auto"><%= search %></a> 
+    
+    <div id="csc-operator-list" class="my-page">
+	<div role="main" class="ui-content">
+		<ul id="operator-list" data-role="listview" data-inset="true" class="operator-list">
+        </ul>
+	</div>
+</div>
+   
+</form>

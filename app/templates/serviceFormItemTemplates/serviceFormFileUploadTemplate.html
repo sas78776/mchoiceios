@@ -1,0 +1,23 @@
+<div class='file-upload' >
+<% if (MANDATORY){ %>
+<h3><%= ENC_NAME %>&nbsp;<font color="#FFF" size="+1">*</font></h3>
+<% } else { %>
+<h3><%= ENC_NAME %></h3>
+<% } %>
+<label><%= documentNo %></label>
+<input id="doc-no-<%= POSITION %>" type="number">
+<label><%= enclosureType %></label>
+<select id="manual-select_<%= POSITION %>">
+    <option value="1"><%= upload %></option>
+    <option value="2"><%= manualSubmission %></option>
+    <option value="3"><%= referenceNumber %></option>
+</select>
+<label><%= document %></label>
+<select id = "<%= ENC_ID %>">
+    <% _.each(DOCUMENT, function (item) { %>
+        <option value="<%=item.DOC_ID%>"><%= item.DOC_NAME %></option>
+    <% });%>
+</select>
+<label><%= uploadFile %></label>
+    <input id="<%= POSITION %>" type="file" size="20" required></div>
+<div id="<%=DIV_ID%>" class="errormsg" style="display: block;"></div>

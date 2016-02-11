@@ -1,0 +1,16 @@
+<form role="main" class="ui-content" id="signupform">
+    <h3 style="text-align:center;font:22pt"><%= pageTitle %></h3>
+    <label for="txt-first-name"><%= firstLabel %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+    <input type="text" name="fName" id="txt-first-name" value="" required />
+    <label for="txt-last-name"><%= secondLabel %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+    <input type="text" name="lName" id="txt-last-name" value="" required />
+    <label for="txt-email"><%= thirdLabel %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+    <input type="email" name="emailId" id="txt-email" value="" required />
+    <label for="txt-mobile"><%= fourthLabel %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+    <input type="number" name="mobileNo" id="txt-mobile" value="" required>
+    <label for="txt-password"><%= fifthLabel %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+    <input type="password" name="pswrd" id="txt-password" value="" required>
+    <label for="txt-password-confirm"><%= sixthLabel %>&nbsp;<font color="#FFF" size="+1">*</font></label>
+    <input type="password" name="passwordConfirm" id="txt-password-confirm" value="" required>
+    <a id="btn-register" class="ui-btn ui-corner-all green-btn"><%= submit %></a>
+</form>

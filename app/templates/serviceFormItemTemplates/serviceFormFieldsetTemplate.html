@@ -1,0 +1,66 @@
+<div style="border-style:solid; border-width:2px; padding:0 5px 5px 5px;">
+    <h3><%=SPDV_ATTRIBUTE_LABEL%></%></h3>
+    <% _.each(itemCollection,function(item){ %>
+        <% if (item.Mandatory === "required"){ %>  
+    <label id="label_<%= item.A_Id %>"><%=item.A_Nm%>&nbsp;<font color="#FFF" size="+1">*</font></label>       
+    <% } else { %>
+        <label id="label_<%= item.A_Id %>"><%=item.A_Nm%></label> 
+        <% } %>
+        <% if (item.Type=="text" || item.Type=="number" || item.Type=="date"){ %> 
+            <input type="<%= item.Type %>" name="<%= item.A_Nm %>~<%= item.A_Id %>" id="<%= item.A_Id %>" data-type="fieldsetfield" <%= item.Mandatory %>>
+            <% if (item.Mandatory === "required") { %>
+                <div id="<%=item.A_Id%>_div_Y" class="errormsg" style="display: block;"></div>
+            <% } else { %>
+                    <div id="<%=item.A_Id%>_div_N" class="errormsg" style="display: block;"></div>
+            <% } %>
+        <% }else if (item.Type=="textarea" ){ %>
+            <textarea type="<%= item.Type %>" name="<%= item.A_Nm %>~<%= item.A_Id %>" id="<%= item.A_Id %>" data-type="fieldsetfield" <%= item.Mandatory %> />
+            <% if (item.Mandatory === "required") {%>
+                <div id="<%=item.A_Id%>_div_Y" class="errormsg" style="display: block;"></div>
+            <% } else { %>
+                    <div id="<%=item.A_Id%>_div_N" class="errormsg" style="display: block;"></div>
+            <% } %>
+        <% }else if (item.Type=="search" || item.Type=="drop down"){ %>
+            <select name="<%= item.A_Nm %>~<%= item.A_Id %>" id="<%= item.A_Id %>" data-type="fieldsetfield" <%= item.Mandatory %>>
+                <option value=""><%= selectlabel %></option>
+                <% if (item.SPDV_STATIC_LIST_VALUES) { %>
+                    <% _.each(item.SPDV_STATIC_LIST_VALUES,function(item1){ %>
+                        <option value="<%=item1.id %>"><%= item1.id %></option>
+                    <% }); %>
+                <% }else {%>
+                    <% _.each(item.QUERY,function(item2){ %>
+                        <option value="<%=item2.DATA_VALUE %>" id="<%='opt_'+item2.DATA_ID %>"><%= item2.DATA_VALUE %></option>
+                    <% }); %>
+                <% } %>
+            </select>
+            <% if (item.Mandatory === "required") {%>
+                <div id="<%=item.A_Id%>_div_Y" class="errormsg" style="display: block;"></div>
+            <% } else { %>
+                    <div id="<%=item.A_Id%>_div_N" class="errormsg" style="display: block;"></div>
+            <% } %>
+        <% }else if (item.Type=="Data List" ){ %>
+            <input list = "listview+<%= item.A_Id %>" name="<%= item.A_Nm %>~<%= item.A_Id %>" id="<%= item.A_Id %> "data-type="fieldsetfield" >
+            <datalist name="<%=item.A_Nm%>" id="listview+<%= item.A_Id %>" <%= item.Mandatory %>>
+                <% if (item.SPDV_STATIC_LIST_VALUES) { %>
+                    <% _.each(item.SPDV_STATIC_LIST_VALUES,function(item1){ %>
+                        <option value="<%=item1.id %>"><%= item1.id %></option>
+                    <% }); %>
+                <% }else {%>
+                    <% _.each(item.QUERY,function(item2){ %>
+                        <option value="<%=item2.DATA_VALUE %>" data-itemId="<%=item2.DATA_ID %>"></option>
+                    <% }); %>
+                <% } %>
+            </datalist>
+            <% if (item.Mandatory === "required") {%>
+                <div id="<%=item.A_Id%>_div_Y" class="errormsg" style="display: block;"></div>
+            <% } else { %>
+                    <div id="<%=item.A_Id%>_div_N" class="errormsg" style="display: block;"></div>
+            <% } %>
+        <% } %>
+    <% }); %>
+    <a id="append-fieldset-data-<%=SPDI_FIELDSET_ID%>" class="append-fieldset-data ui-btn green-btn ui-corner-all" data-itemId="<%= btnId %>">
+        <%= submit %>
+    </a>
+    <div id="fieldsetdatacontainer-<%=SPDI_FIELDSET_ID%>" class='fieldset-row-container' style='word-wrap:break-word; white-space: normal;'></div>
+    <input id='fieldSetMasterValues_<%= SPDI_FIELDSET_ID %>' data-type='hiddenfieldsetfield' type='hidden' value='' title='' name='fieldSetMasterValues_<%= SPDI_FIELDSET_ID %>_<%= SPDV_ATTRIBUTE_LABEL %>'>
+</div>

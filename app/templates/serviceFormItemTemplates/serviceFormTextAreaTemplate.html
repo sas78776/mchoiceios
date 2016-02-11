@@ -1,0 +1,7 @@
+<% if (SPDV_FIELD_REQUIRED === "required"){ %>  
+    <label id="label_<%= SPDI_ATTRIBUTE_ID %>"><%=SPDV_ATTRIBUTE_LABEL%>&nbsp;<font color="#FFF" size="+1">*</font></label>       
+    <% } else { %>
+        <label id="label_<%= SPDI_ATTRIBUTE_ID %>"><%=SPDV_ATTRIBUTE_LABEL%></label> 
+        <% } %>  
+<textarea type="<%=SPDV_INPUT_TYPE_NAME%>" name="<%= SPDV_ATTRIBUTE_LABEL%>~<%= SPDI_ATTRIBUTE_ID %>" id="<%= SPDI_ATTRIBUTE_ID %>" <%= SPDV_FIELD_REQUIRED %> />
+<div id="<%=DIV_ID%>" class="errormsg" style="display: block;"></div>

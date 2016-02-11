@@ -1,0 +1,12 @@
+<form id="feedbackform" class="ui-content">
+    <label><%= feedbacktype %></label>
+    <select id="feedbackform-type" required >
+        <option value="0"><%= selectLabel %></option>
+        <option value="1"><%= suggestion %></option>
+        <option value="2"><%= complaint %></option>
+        <option value="3"><%= others %></option>
+    </select>
+    <label><%= feedbackdetails %></label>
+    <textarea id="feedbackform-comment" type="text" required ></textarea>
+    <a id="btn-feedback-submit" class="ui-btn green-btn ui-corner-all" style="margin : auto"><%= submit %></a>
+</form>

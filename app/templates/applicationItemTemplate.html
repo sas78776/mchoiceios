@@ -1,0 +1,22 @@
+<div style="font-size:20px;word-break:normal;white-space:normal;">{{serviceName}}</div>
+<hr>
+<h5 style="text-shadow:none !important">{{appRegNumberLabel}}</h5>
+<div>{{appId}}</div>
+<h5>{{appDateLabel}}</h5>
+<div>{{appDate}}</div>
+<h5>{{actionDateLabel}}</h5>
+<div>{{actionDate}}</div>
+<h5>{{remarkLabel}}</h5>
+<div>{{remarks}}</div>
+<h5>{{statusLabel}}</h5>
+<div>{{action}}
+    {{#ifCond status '===' "A"}}
+        <i class="fa fa-check-circle-o" style="float:right;color:#018700"></i>
+    {{else}}
+    {{#ifCond status '===' "I"}}
+        <i class="fa fa-exclamation-circle" style="float:right;color:#EF9B0F"></i>
+    {{else}}
+        <i class="fa fa fa-frown-o" style="float:right;color:#FF0000"></i>
+    {{/ifCond}}
+    {{/ifCond}}
+</div>
